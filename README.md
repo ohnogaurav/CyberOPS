@@ -1,51 +1,147 @@
+<p align="center">
+  <img src="pic.png" alt="CyberOps Banner" width="100%">
+</p>
+
 # CYBEROPS — Real Cyber Investigation System
 
-## BEFORE YOU RUN
+A lightweight cyber security toolkit built with Python and Flask to simulate real-world incident investigation workflows.
 
-### Step 1 — Install Npcap (for packet capture)
-Download: https://npcap.com/#download
-Install with "WinPcap API-compatible mode" checked.
+---
 
-### Step 2 — Install Python packages (as Administrator)
+## 🚀 What This Project Does
+
+CYBEROPS combines multiple cyber security tasks into one system:
+
+* Analyze authentication logs
+* Scan network ports
+* Capture live packets
+* Check malicious IPs
+
+All through a simple web interface.
+
+---
+
+## 🧠 Features
+
+| Module                 | Description                                           |
+| ---------------------- | ----------------------------------------------------- |
+| 🔐 Auth Log Analyzer   | Detects failed/success logins from Windows Event Logs |
+| 🌐 Port Scanner        | Scans open ports using real socket connections        |
+| 📡 Packet Capture      | Captures live packets using Scapy                     |
+| 🧠 Threat Intelligence | Checks IPs via AbuseIPDB + local blacklist            |
+
+---
+
+## 🏗️ Project Structure
+
 ```
-pip install flask scapy pywin32
+cybercrime_real/
+├── app.py              # Flask app (routes + UI)
+├── log_scanner.py      # Log analysis + port scanning
+├── packet_capture.py   # Packet sniffing (Scapy)
+├── threat_intel.py     # IP reputation checks
+├── requirements.txt
 ```
 
-### Step 3 — (Optional) Get free AbuseIPDB API key
-Register: https://www.abuseipdb.com/register
-Free tier = 1000 checks/day.
-Set key:
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Install Npcap (Required for packet capture)
+
+https://npcap.com/#download
+✔ Enable **WinPcap API-compatible mode**
+
+---
+
+### 2. Install dependencies
+
+Run as Administrator:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+### 3. (Optional) AbuseIPDB API Key
+
+https://www.abuseipdb.com/register
+
+Set environment variable:
+
 ```
 set ABUSEIPDB_KEY=your_key_here
 ```
 
-### Step 4 — Run as Administrator (REQUIRED)
-Right-click Command Prompt → "Run as administrator"
+---
+
+### 4. Run the app
+
 ```
-cd cybercrime_real
 python app.py
 ```
 
-Open browser: http://127.0.0.1:5000
+Open:
+
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-## FEATURES (ALL REAL)
+## 🧪 How to Use
 
-| Feature | Data Source |
-|---|---|
-| Auth Log | Windows Security Event Log (Event IDs 4624/4625) |
-| Port Scanner | Real socket connections to any host |
-| Packet Capture | Scapy live capture via Npcap |
-| Threat Intel | AbuseIPDB API + local blacklist |
+1. Open dashboard
+2. Choose module:
 
-## FILES
-```
-cybercrime_real/
-├── app.py            — Flask web app
-├── analyzer.py       — (not used, replaced by below)
-├── log_scanner.py    — Windows Event Log + port scanner
-├── packet_capture.py — Scapy live capture
-├── threat_intel.py   — AbuseIPDB + blacklist
-└── requirements.txt
-```
+   * Auth Log → view login attempts
+   * Port Scan → scan target IP
+   * Packets → capture live traffic
+   * Threat Intel → check IP reputation
+
+---
+
+## ⚠️ Notes
+
+* Requires **Administrator privileges**
+* Packet capture only works with Npcap installed
+* Designed for **educational and lab use only**
+
+---
+
+## 📸 Demo
+
+(Add screenshots here — VERY IMPORTANT)
+
+---
+
+## 🎯 Tech Stack
+
+* Python
+* Flask
+* Scapy
+* PyWin32
+* Socket Programming
+
+---
+
+## 💀 Reality
+
+This is a **learning-focused cyber security project**, not a full enterprise tool.
+
+---
+
+## 📌 Future Improvements
+
+* Multi-threaded fast port scanning
+* Better service detection
+* Linux support
+* UI enhancements
+
+---
+
+## 👤 Author
+
+Gaurav Kumar
+GitHub: https://github.com/ohnogaurav
