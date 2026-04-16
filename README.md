@@ -110,12 +110,6 @@ http://127.0.0.1:5000
 
 ---
 
-## 📸 Demo
-
-(Add screenshots here — VERY IMPORTANT)
-
----
-
 ## 🎯 Tech Stack
 
 * Python
